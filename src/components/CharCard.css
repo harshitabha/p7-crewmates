@@ -1,0 +1,30 @@
+.char-img {
+    height: 20vh;
+    margin-bottom: 3vh;
+}
+
+.char-card {
+    background-color: rgba(152, 123, 156, 0.5);
+    padding: 1vw;
+    border-radius: 10px;
+    display: flex;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.del-card {
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.trash-icon {
+    height: 3vh;
+    object-fit: contain;
+}

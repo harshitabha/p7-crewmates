@@ -8,17 +8,17 @@ import CharCard from "../components/CharCard";
 const Gallery = ({supabase}) => {
     const [partyMembers, setPartyMembers] = useState([]);
 
+    const getPartyMembers = async () => { 
+        const {data, error} = await supabase
+            .from('PartyMembers')
+            .select('*');
+
+        if (error) {
+            console.error(error);
+        } else setPartyMembers(data);
+    }
+
     useEffect(() => {
-        const getPartyMembers = async () => { 
-            const {data, error} = await supabase
-                .from('PartyMembers')
-                .select('*');
-
-            if (error) {
-                console.error(error);
-            } else setPartyMembers(data);
-        }
-
         getPartyMembers();
     }, [])
 
@@ -27,7 +27,14 @@ const Gallery = ({supabase}) => {
             <Navbar />
             <div className="pg-content gallery-pg">
                 <h1 className="page-title">Gallery</h1>
-                {partyMembers.length !== 0 ? <CharCard />: 
+                {partyMembers.length !== 0 ? partyMembers.map((member) => {
+                    return <CharCard 
+                                key={member.id} 
+                                char={member}
+                                db = {supabase}
+                                getPartyMembers={getPartyMembers} />
+                
+                }): 
                     <>
                         <p>No Party Members right now. Please create some</p>
                         <Link 
