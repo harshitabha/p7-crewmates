@@ -43,3 +43,9 @@
     width: 100%;
     justify-content: space-around;
 }
+
+.page-title {
+    font-size: 3em;
+    color: white;
+    margin: 1vw;
+}

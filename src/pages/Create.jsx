@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import "./Create.css";
 
-const Create = () => {
+const Create = ({supabase}) => {
     const [formOption, setFormOption] = useState({
         charName: "",
         charClass: "",
@@ -18,14 +18,22 @@ const Create = () => {
     }
 
     const handleSubmit = (e) => {
-        console.error(formOption);
+        e.preventDefault();
+        addChar();
         // clear the form
         setFormOption({
             charName: "",
             charClass: "",
             charRace: ""
         });
-        e.preventDefault();
+    }
+
+    const addChar = async () => {
+        const {data, error} = await supabase.from('PartyMembers').insert([formOption]);
+
+        if (error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -64,7 +72,7 @@ const Create = () => {
                         </div>
 
 
-                        <button type="submit" className="btn" onSubmit={handleSubmit}>Create Party Member</button>
+                        <button type="submit" className="btn" onClick={(e) => handleSubmit(e)}>Create Party Member</button>
                     </form>
                 </div>
             </div>
