@@ -1,0 +1,36 @@
+.input-container {
+    background-color: rgba(46, 40, 47, 0.6);
+    border-radius: 10px;
+    padding: 0.5vw;
+    margin: 1vw;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+
+}
+
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    flex-flow: column wrap;
+    max-height: 30vh;
+    padding: 1vh 2vw;
+
+}
+
+.radio-input {
+    margin: 0 0.5vw; /*Adjusts the margin around each option*/
+}
+
+.radio-option {
+    margin: 0.5vh 0; /*Adjusts the margin between each option*/
+}
+
+.name {
+    margin: 0.5vh 0;
+}

@@ -1,0 +1,45 @@
+#root {
+    overflow-x: hidden;
+}
+
+.pg-content {
+    height: 92vh;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://i.pinimg.com/originals/71/6f/34/716f34c12d544e06112c9502d1a895e5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text {
+    color: white;
+    &:hover {
+        color: rgb(194, 194, 194);
+    }
+}
+
+.btn {
+    background-color: rgb(229, 182, 255);
+    color: black;
+    padding: 1vw;
+    border-radius: 10px;
+    font-size: 1.6em;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        background-color: rgb(206, 128, 249);
+        color: white;
+    }
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
