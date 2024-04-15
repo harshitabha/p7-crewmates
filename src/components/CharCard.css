@@ -1,6 +1,7 @@
 .char-img {
     height: 20vh;
     margin-bottom: 3vh;
+    object-fit: contain;
 }
 
 .char-card {
