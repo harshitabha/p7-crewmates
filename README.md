@@ -4,7 +4,7 @@ Submitted by: Harshita Bhardwaj
 
 This web app: D&D Party creater
 
-Time spent: 3 hours spent in total
+Time spent: 5 hours spent in total
 
 ## Required Features
 
