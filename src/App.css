@@ -27,6 +27,7 @@
 .btn {
     background-color: rgb(229, 182, 255);
     color: black;
+    width: 20vw;
     padding: 1vw;
     border-radius: 10px;
     font-size: 1.6em;
@@ -48,4 +49,11 @@
     font-size: 3em;
     color: white;
     margin: 1vw;
+}
+
+.home-pg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

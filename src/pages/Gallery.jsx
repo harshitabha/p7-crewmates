@@ -27,20 +27,22 @@ const Gallery = ({supabase}) => {
             <Navbar />
             <div className="pg-content gallery-pg">
                 <h1 className="page-title">Gallery</h1>
-                {partyMembers.length !== 0 ? partyMembers.map((member) => {
-                    return <CharCard 
-                                key={member.id} 
-                                char={member}
-                                db = {supabase}
-                                getPartyMembers={getPartyMembers} />
-                
-                }): 
-                    <>
-                        <p>No Party Members right now. Please create some</p>
-                        <Link 
-                            to='/create'
-                            className='btn text'>Add a party member →</Link>
-                    </>}
+                <div className="cards-container">
+                    {partyMembers.length !== 0 ? partyMembers.map((member) => {
+                        return <CharCard 
+                                    key={member.id} 
+                                    char={member}
+                                    db = {supabase}
+                                    getPartyMembers={getPartyMembers} />
+                    
+                    }): 
+                        <div className="no-cards">
+                            <p>No Party Members right now. Please create some</p>
+                            <Link 
+                                to='/create'
+                                className='btn text'>Add a party member →</Link>
+                        </div>}
+                </div>
             </div>
         </>
     );
